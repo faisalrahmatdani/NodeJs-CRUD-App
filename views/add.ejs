@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 my-5">
+      <h2>Masukan Contact Baru</h2>
+
+      <% if (typeof error != 'undefined') { %>
+      <div class="alert alert-warning" role="alert">
+        <ul>
+          <% error.forEach((error) => { %>
+
+          <li><%= error.msg %></li>
+
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+
+      <form class="bg-light bg-gradient px-3 py-3 mt-3 rounded" method="post" action="/contact">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama Lengkap</label>
+          <input type="text" class="form-control" id="nama" name="nama" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="ponsel" class="form-label">Nomor Hanphone</label>
+          <input type="text" class="form-control" id="ponsel" name="ponsel" required />
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-8">
+      <h2>Detail Contact</h2>
+      <% if (!find) { %>
+      <div class="alert alert-danger col-md-6" role="alert">
+        Data contact tidak di temukan !! <br />
+        <a href="/contact" class="alert-link">Kembali Ke Halaman Utama</a>
+      </div>
+      <% }else { %>
+      <div class="card" style="width: 23rem">
+        <div class="card-header"><h3><%= find.nama %></h3></div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nomor Hanphone : <%= find.ponsel %></li>
+          <li class="list-group-item">Email : <%= find.email %></li>
+        </ul>
+      </div>
+      <a href="/contact/delete/<%= find.nama %>" class="btn btn-danger badges rounded-pill mt-3 ms-2" onclick="confirm('Apakah anda ingin menghapus data?')">Hapus</a>
+      <a href="/contact/edit/<%= find.nama %>" class="btn btn-warning badges rounded-pill mt-3 me-5 ms-2">Perbarui</a>
+      <a href="/contact" class="btn btn-success badges rounded-pill mt-3 ms-5">Kembali</a>
+      <% } %>
+    </div>
+  </div>
+</div>
